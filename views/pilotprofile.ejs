@@ -3,7 +3,10 @@
   <head>
     <title>Pilots Profile</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    
   </head>
+
   <body>
     <h1>Pilots/Users Profile</h1>
     <nav>
@@ -15,21 +18,11 @@
         </ul>
       </nav>
 
-      <form method="post" action="/signup">
-        
-         <div>
-           <label for="username"> New username: </label>
-           <input type="text" name="username">
-         </div>
-       
-         <div>
-           <label for="password"> New password: </label>
-           <input type="password" name="password">
-         </div>
-         <% if (typeof(errorMessage) != "undefined") { %>
-         <div class="error-message"><%= errorMessage %></div>
-         <% } %>
-         <button> Sign up </button>
-
+      <h3>My First Map</h3>
+      <div id="map"></div>
+    <script  
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChN--yHostbPoNYH34rbCEZfUXDgNxaKY">
+    </script>
+    <script type="text/javascript" src="javascript/main.js"></script>
   </body>
 </html>
