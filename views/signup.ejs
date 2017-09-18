@@ -1,0 +1,43 @@
+
+ <nav>
+    <ul>
+      <il><a href="/"><button> Index </button></a></il>
+      <il><a href="/signup"><button> Sign up </button></a></il>
+      <il><a href="/login"><button> Log In </button></a> </il>
+      <il><a href="/pilotprofile"><button>Private Profile</button></a></il>
+      
+    </ul>
+  </nav>
+
+  <form method="post" action="/signup">
+    <div>
+      <label for="username"> Your username: </label>
+      <input type="text" name="username">
+    </div>
+  
+    <div>
+      <label for="password"> Your password: </label>
+      <input type="password" name="password">
+    </div>
+
+    <div>
+        <label for="name"> Your nickmane: </label>
+        <input type="text" name="name">
+    </div>
+
+    <div>
+        <label for="drone_name"> Your drone name: </label>
+        <input type="text" name="drone_name">
+    </div>
+
+    <div>
+        <label for="drone_description"> Your drone Description: </label>
+        <input type="text" name="drone_description">
+    </div>
+
+    <% if (typeof(errorMessage) != "undefined") { %>
+    <div class="error-message"><%= errorMessage %></div>
+    <% } %>
+    <button> Submit </button>
+  </form>
+</form>

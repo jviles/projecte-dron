@@ -1,0 +1,25 @@
+<nav>
+    <ul>
+      <il><a href="/"><button> Index </button></a></il>
+      <il><a href="/signup"><button> Sign up </button></a></il>
+      <il><a href="/login"><button> Log In </button></a> </il>
+      <il><a href="/pilotprofile"><button>Private Profile</button></a></il>
+      
+    </ul>
+  </nav>
+
+<form method="post" action="/login">
+  <div>
+    <label for="username"> Your username: </label>
+    <input type="text" name="username">
+  </div>
+
+  <div>
+    <label for="password"> Your password: </label>
+    <input type="password" name="password">
+  </div>
+  <% if (typeof(errorMessage) != "undefined") { %>
+  <div class="error-message"><%= errorMessage %></div>
+  <% } %>
+  <button> Log in </button>
+</form>
