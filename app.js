@@ -1,20 +1,19 @@
 const express        = require("express");
 const path           = require("path");
-var favicon = require('serve-favicon');
+const favicon        = require('serve-favicon');
 const logger         = require("morgan");
 
 const cookieParser   = require("cookie-parser");
 const bodyParser     = require("body-parser");
 const mongoose       = require("mongoose");
-const bcrypt     	 = require("bcrypt");
+const bcrypt     	   = require("bcrypt");
 const session        = require("express-session");
 const MongoSession   = require("connect-mongo")(session);
 const app            = express();
 
-const authRoutes = require('./routes/signup');
+const authRoutes = require('./routes/auth');
 const indexRoutes = require('./routes/index');
-const privateRoutes = require('./routes/private');
-const login = require('./routes/login');
+const profileRoutes = require('./routes/profile');
 
 // Controllers
 
@@ -44,9 +43,8 @@ app.use(session({
 }));
 
 app.use('/', indexRoutes);
-app.use('/', authRoutes);
-app.use('/', login);
-app.use('/pilotprofile', privateRoutes);
+app.use('/auth', authRoutes);
+app.use('/pilotprofile', profileRoutes);
 
 // Authentication
 app.use(cookieParser());

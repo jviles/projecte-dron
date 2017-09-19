@@ -1,6 +1,14 @@
+*{
+  padding:0;
+  margin:0;
+  border:0;
+  font:inherit;
+  box-sizing:border-box ;
+}
+
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 25px "Share Tech Mono", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -11,3 +19,20 @@ a {
   height: 500px;
   width: 50%;
  }
+.main-menu {
+ position: fixed;
+ top:0;
+ left:0;
+ z-index:200;
+ width:100%
+}
+.main-menu_sections {
+  z-index:200;
+  position:absolute;
+  width:100%;
+  height:64px;
+  text-align: center;
+}
+.main-menu_section-center{
+  display:inline-block;
+}

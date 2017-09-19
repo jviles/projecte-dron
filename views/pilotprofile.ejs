@@ -3,26 +3,50 @@
   <head>
     <title>Pilots Profile</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-
-    
   </head>
 
   <body>
-    <h1>Pilots/Users Profile</h1>
-    <nav>
-        <ul>
-          <il><a href="/"><button> Index </button></a></il>
-          <il><a href="/signup"><button> Sign up </button></a></il>
-          <il><a href="/login"><button> Log In </button></a> </il>
-          <il><a href="/pilotprofile"><button>Private Profile</button></a></il>
-        </ul>
-      </nav>
 
-      <h3>My First Map</h3>
-      <div id="map"></div>
+    <h1>Pilots/Users Profile</h1>
+
+    <header class="main-menu">
+      <nav class="main-menu_sections">
+        <div clas="main-menu_section-center">
+          <ul>
+            <il><a href="/"><button> Index </button></a></il>
+            <il><a href="/races"><button> Races </button></a></il>          
+            <il><a href="/auth/signup"><button> Sign up </button></a></il>
+            <il><a href="/auth/login"><button> Log In </button></a> </il>
+            <il><a href="/pilotprofile"><button>Pilot Profile</button></a> </il>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+
+
+    <p>Name: </p>
+    <p>Drone Name: </p>
+    <p>Drone Description: </p>
+
+    <!--
+
+    <h2>Races Map</h2>
+    <div id="map"></div>
+
+    <h3>CREATE A NEW RACE</h3>
+    <a href="/newRace/newRace">RACE</a>
+
+    -->
+
     <script  
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChN--yHostbPoNYH34rbCEZfUXDgNxaKY">
     </script>
+
+
+
+
+
     <script type="text/javascript" src="javascript/main.js"></script>
   </body>
 </html>
