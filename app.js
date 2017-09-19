@@ -19,7 +19,7 @@ const login = require('./routes/login');
 // Controllers
 
 // Mongoose configuration
-mongoose.connect("mongodb://localhost/basic-auth");
+mongoose.connect("mongodb://localhost/meteor-races");
 
 // Middlewares configuration
 app.use(logger("dev"));
