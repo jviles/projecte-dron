@@ -5,11 +5,11 @@ const Schema   = mongoose.Schema;
 const RaceSchema = new Schema({
   name: String,
   level: Number,
-  location: { type: { type: String }, coordinates: [Number] },
-  quantity_people: Number,
   price: Number,
-  points: Number,
-  pilots: [{type: Schema.Types.ObjectId, ref: 'User'}]
+  given_points: Number,
+  quantity_people: Number,
+  location: { type: { type: String }, coordinates: [Number] },
+  pilots_attending: [{type: Schema.Types.ObjectId, ref: 'User'}]
 });
 
 RaceSchema.index({ location: '2dsphere' });

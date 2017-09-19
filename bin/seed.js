@@ -9,10 +9,10 @@ const initialRacesData = [
   {
     name: "Miami Nights",
     level: 1,
-    location: { type: "Point", coordinates: [2.189792, 41.390627] },
-    quantity_people: 10,
     price: 10,
-    points: 100
+    given_points: 100,
+    quantity_people: 10,
+    location: { type: "Point", coordinates: [2.189792, 41.390627] },
   }
   // {
   //   name: "Mardi Gras",
@@ -112,6 +112,8 @@ const initialRacesData = [
 
 
 var raceIds = [];
+
+
 Race.create(initialRacesData, (err, docs) => {
   if(err){
       throw err;

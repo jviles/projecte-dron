@@ -6,9 +6,9 @@ const userSchema = new Schema({
   username: String,
   password: String,
   name:String,
-  drone_name:String,
   level: Number,
   points: Number,
+  drone_name:String,
   drone_description: String,
   races_id: [{type: Schema.Types.ObjectId, ref: 'Race'}]
 });
