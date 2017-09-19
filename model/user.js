@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Race  = require("../model/race");
 const Schema   = mongoose.Schema;
 
 const userSchema = new Schema({
@@ -9,7 +10,7 @@ const userSchema = new Schema({
   level: Number,
   points: Number,
   drone_description: String,
-  races_id: Number,
+  races_id: [{type: Schema.Types.ObjectId, ref: 'Race'}]
 });
 
 const User = mongoose.model('User', userSchema);

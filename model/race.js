@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const User = require("../model/user");
 const Schema   = mongoose.Schema;
 
 const RaceSchema = new Schema({
@@ -8,11 +9,11 @@ const RaceSchema = new Schema({
   quantity_people: Number,
   price: Number,
   points: Number,
-  location: String,
-  pilot: Number,
+  pilots: [{type: Schema.Types.ObjectId, ref: 'User'}]
 });
 
 RaceSchema.index({ location: '2dsphere' });
 
 const Race = mongoose.model("Race", RaceSchema);
+
 module.exports = Race;
