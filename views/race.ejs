@@ -1,30 +1,99 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pilots Profile</title>
+    <title>New Race Profile</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
 
   <body>
 
-    <h1>Race</h1>
+    <h1>New Race</h1>
 
-    <header class="main-menu">
-      <nav class="main-menu_sections">
-        <div clas="main-menu_section-center">
+    <header>
+      <nav>
+       
           <ul>
-            <il><a href="/"><button> Index </button></a></il>
-            <il><a href="/race"><button> Races </button></a></il>          
-            <il><a href="/auth/signup"><button> Sign up </button></a></il>
-            <il><a href="/auth/login"><button> Log In </button></a> </il>
-            <il><a href="/pilotprofile"><button>Pilot Profile</button></a> </il>
+            <il><a href="/">Index </a></il>
+            <il><a href="/newrace"> Races </a></il>          
+            <il><a href="/auth/signup">Sign up </a></il>
+            <il><a href="/auth/login">Log In </a> </il>
+            <il><a href="/pilotprofile">Pilot Profile</a> </il>
           </ul>
-        </div>
+        
       </nav>
     </header>
 
+  <form method="post" action="/race">
+      <div>
+        <label for="race-name"> Race Name: </label>
+        <input type="text" name="droneName" id="name">
+      </div>
+    
+      <div>
+        <label for="Level"> Level: </label>
+        <input type="number" name="Level" id="Level">
+      </div>
+    
+      <div>
+        <label for="Price"> Price: </label>
+        <input type="number" name="price" id="price">
+      </div>
 
+      <div>
+        <label for="given_points"> Points obtained: </label>
+        <input type="number" name="given_points" id="give_points">
+      </div>
 
-   
-    <p>Race Name: </p>
-    <p>Race Description: </p>
+      <div>
+        <label for="quantity_people"> Max nº: </label>
+        <input type="number" name="quantity_people" id="quantity_people">
+      </div>
+
+      <div>
+        <label for="given_points"> Points obtained: </label>
+        <input type="number" name="given_points" id="give_points">
+      </div>
+        
+    </form>
+
+    <div id="locationField">
+      <input id="autocomplete" placeholder="Enter your address"
+             onFocus="geolocate()" type="text"></input>
+    </div>
+
+    <table id="address">
+      <tr>
+        <td class="label">Street address</td>
+        <td class="slimField"><input class="field" id="street_number"
+              disabled="true"></input></td>
+        <td class="wideField" colspan="2"><input class="field" id="route"
+              disabled="true"></input></td>
+      </tr>
+      <tr>
+        <td class="label">City</td>
+        <!-- Note: Selection of address components in this example is typical.
+             You may need to adjust it for the locations relevant to your app. See
+             https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
+        -->
+        <td class="wideField" colspan="3"><input class="field" id="locality"
+              disabled="true"></input></td>
+      </tr>
+      <tr>
+        <td class="label">State</td>
+        <td class="slimField"><input class="field"
+              id="administrative_area_level_1" disabled="true"></input></td>
+        <td class="label">Zip code</td>
+        <td class="wideField"><input class="field" id="postal_code"
+              disabled="true"></input></td>
+      </tr>
+      <tr>
+        <td class="label">Country</td>
+        <td class="wideField" colspan="3"><input class="field"
+              id="country" disabled="true"></input></td>
+      </tr>
+    </table>
+
+    <button> Add this Race </button>
+    
+  </body>
+  </html>
