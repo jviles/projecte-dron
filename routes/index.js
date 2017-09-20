@@ -8,9 +8,8 @@ router.get('/',(req, res, next) => {
   if (req.session.currentUser) {
     res.redirect("/pilotprofile");
   } else {
-    next();
-  }
-  res.render('index');
+    res.render('index');
+  }``
 });
 
 module.exports = router;

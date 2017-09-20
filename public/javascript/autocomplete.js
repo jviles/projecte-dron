@@ -1,5 +1,5 @@
 var placeSearch, autocomplete;
-var raceAddress;
+var racenpAddress;
 var componentForm = {
   street_number: 'short_name',
   route: 'long_name',

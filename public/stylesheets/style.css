@@ -1,42 +1,49 @@
-*{
-  padding:0;
-  margin:0;
-  border:0;
-
+*:before *:after {
+  box-sizing: border-box;
 }
 
-body {
+html, body { 
+  padding: 0;
+  margin: 0; 
+  overflow: hidden;
+  font-family: 'Share Tech Mono', monospace;
+  text-transform: uppercase;
+}
+
+header nav {
+  background-image: -webkit-linear-gradient(180deg, #ffffff 0%, #0082ff 36%, #000000 100%);
+  background-image: -moz-linear-gradient(180deg, #ffffff 0%, #0082ff 36%, #000000 100%);
+  background-image: -o-linear-gradient(180deg, #ffffff 0%, #0082ff 36%, #000000 100%);
+  background-image: linear-gradient(180deg, #ffffff 0%, #0082ff 36%, #000000 100%);
+  margin-bottom:10px;
+}
  
-  font: 25px "Share Tech Mono", Helvetica, Arial, sans-serif;
+header nav ul {
+  list-style:none;
+  overflow:hidden;
+}
+
+header nav ul li{
+  float:right;
+}
+        
+header nav ul li a{
+  display:block;
+  padding:20px;
+  color:white;
+  text-decoration:none;
+}
+
+header nav ul li a:hoover{
+  background:#2980b9
+}
+
+.video{
+  width:50%;
+  margin:0px auto;
 }
 
 #map {
   height: 500px;
   width: 50%;
  }
-
- header nav {
-   background: #001AFF;
-   margin-bottom:10px;
- }
-    header nav ul {
-      list-style:none;
-      overflow:hidden;
-    }
-      header nav ul li{
-        float:right;
-      }
-        header nav ul li a{
-          display:block;
-          padding:20px;
-          color:white;
-          text-decoration:none;
-        }
-          header nav ul li a:hoover{
-            background:#2980b9
-          }
-
-.video{
-  width:50%;
-  margin:0px auto;
-}
