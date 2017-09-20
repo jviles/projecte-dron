@@ -8,6 +8,8 @@ const RaceSchema = new Schema({
   price: Number,
   given_points: Number,
   quantity_people: Number,
+  date: Date,
+  time: Date,
   location: { type: { type: String }, coordinates: [Number] },
   pilots_attending: [{type: Schema.Types.ObjectId, ref: 'User'}]
 });

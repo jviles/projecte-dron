@@ -1,6 +1,6 @@
 const express 	   = require("express");
 const router       = express.Router();
-const Race         = require('../model/race.js');
+const Race         = require('../model/race');
 
 
 
@@ -24,7 +24,7 @@ router.get('/', (req, res, next) => {
         next();
       }
       else {
-        res.render('race', {Race:docs});
+        res.render('races', {Race:docs});
       }
     });
   });

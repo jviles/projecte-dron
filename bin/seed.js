@@ -4,30 +4,29 @@ const User = require("../model/user");
 
 mongoose.connect("mongodb://localhost/meteor-races");
 
-
-const initialRacesData = [
+npm const initialRacesData = [
   {
     name: "Miami Nights",
     level: 1,
-    price: 10,
-    given_points: 100,
-    quantity_people: 10,
     location: { type: "Point", coordinates: [2.189792, 41.390627] },
-  },
-  {
-    name: "Mardi Gras",
-    level: 2,
-    location: { type: { type: "Point" }, coordinates: [2.162541, 41.387037] },
-    quantity_people: 100,
-    price: 15,
-    points: 500,
-    pilots: [{ 
-      name: "Jordi20H",
-      drone_name: "Grasshopper",
-      level: 3,
-      points: 1230,
-      drone_description: "An distinguished drone designer and self-taught engineer, A_Nub’s mastery of complex race lines has earned him more podium finishes than any other DRL pilot.",
-   },
+    quantity_people: 10,
+    price: 10,
+    points: 100
+  }
+  // {
+  //   name: "Mardi Gras",
+  //   level: 2,
+  //   location: { type: { type: "Point" }, coordinates: [2.162541, 41.387037] },
+  //   quantity_people: 100,
+  //   price: 15,
+  //   points: 500,
+  //   pilots: [{ 
+  //     name: "Jordi20H",
+  //     drone_name: "Grasshopper",
+  //     level: 3,
+  //     points: 1230,
+  //     drone_description: "An distinguished drone designer and self-taught engineer, A_Nub’s mastery of complex race lines has earned him more podium finishes than any other DRL pilot.",
+  //     },
   //     { 
   //       name: "AWKBOTS",
   //       drone_name: "Awkward King",
@@ -112,18 +111,27 @@ const initialRacesData = [
 
 
 var raceIds = [];
+var pilotsIds = [];
 
+function createRaces(done) {
+  Race.create(initialRacesData, (err, docs) => {
+    if(err){
+        throw err;
+    }
+    docs.forEach((element) => {
+        raceIds.push(element.id);
+    });
+    console.log('races:', raceIds);
+    done();
+ });
+}
 
-Race.create(initialRacesData, (err, docs) => {
-  if(err){
-      throw err;
-  }
-  docs.forEach((element) => {
-      raceIds.push(element.id);
-      
-  })
-  mongoose.connection.close();
-
-  console.log('races:', raceIds);
-
-})
+createRaces(() => {
+  // createPilots(() => {
+  //   addRacesToPilots(() => {
+  //     addPilotsToRaces(() => {
+          mongoose.connection.close();
+  //     });
+  //   })
+  // })
+});
