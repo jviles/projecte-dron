@@ -13,21 +13,21 @@ const initialRacesData = [
     given_points: 100,
     quantity_people: 10,
     location: { type: "Point", coordinates: [2.189792, 41.390627] },
-  }
-  // {
-  //   name: "Mardi Gras",
-  //   level: 2,
-  //   location: { type: { type: "Point" }, coordinates: [2.162541, 41.387037] },
-  //   quantity_people: 100,
-  //   price: 15,
-  //   points: 500,
-  //   pilots: [{ 
-  //     name: "Jordi20H",
-  //     drone_name: "Grasshopper",
-  //     level: 3,
-  //     points: 1230,
-  //     drone_description: "An distinguished drone designer and self-taught engineer, A_Nub’s mastery of complex race lines has earned him more podium finishes than any other DRL pilot.",
-  //     },
+  },
+  {
+    name: "Mardi Gras",
+    level: 2,
+    location: { type: { type: "Point" }, coordinates: [2.162541, 41.387037] },
+    quantity_people: 100,
+    price: 15,
+    points: 500,
+    pilots: [{ 
+      name: "Jordi20H",
+      drone_name: "Grasshopper",
+      level: 3,
+      points: 1230,
+      drone_description: "An distinguished drone designer and self-taught engineer, A_Nub’s mastery of complex race lines has earned him more podium finishes than any other DRL pilot.",
+   },
   //     { 
   //       name: "AWKBOTS",
   //       drone_name: "Awkward King",
@@ -120,8 +120,10 @@ Race.create(initialRacesData, (err, docs) => {
   }
   docs.forEach((element) => {
       raceIds.push(element.id);
+      
   })
   mongoose.connection.close();
 
   console.log('races:', raceIds);
+
 })

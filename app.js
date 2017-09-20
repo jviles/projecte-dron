@@ -11,9 +11,10 @@ const session        = require("express-session");
 const MongoSession   = require("connect-mongo")(session);
 const app            = express();
 
-const authRoutes = require('./routes/auth');
-const indexRoutes = require('./routes/index');
-const profileRoutes = require('./routes/profile');
+const authRoutes     = require('./routes/auth');
+const indexRoutes    = require('./routes/index');
+const profileRoutes  = require('./routes/profile');
+const raceRoutes     = require('./routes/race');
 
 // Controllers
 
@@ -45,6 +46,7 @@ app.use(session({
 app.use('/', indexRoutes);
 app.use('/auth', authRoutes);
 app.use('/pilotprofile', profileRoutes);
+app.use('/race', raceRoutes);
 
 // Authentication
 app.use(cookieParser());
