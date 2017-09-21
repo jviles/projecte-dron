@@ -24,24 +24,23 @@ router.use((req, res, next) => {
 });*/
 
 router.get('/', (req, res, next) => {
-  User.findById({}, (err, docs) => {
+  User.findById(req.param.id, function (err,User) {
     if(err) {
       next();
     }
     else {
-      res.render('pilotprofile', {User:docs});
+      res.render('pilotprofile');
     }
   });
 });
 
 router.post('/', (req, res, next) => {
-  var newUserName = req.body.Name;
-  var newNicKName = req.body.propellers;
-  var newDrone = req.body.newDrone;
-
-  _addToDBS(newUserName, newNickName, new)Drone;
+  var newUserName = req.body.username;
+  var newNicKName = req.body.name;
+  var newdrone_name = req.body.drone_name;
+  var newdrone_description = req.body.drone_description;
   res.redirect('/pilotprofile');
-});
+});*/
 
 
 
