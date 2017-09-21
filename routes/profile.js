@@ -40,7 +40,7 @@ router.post('/', (req, res, next) => {
   var newdrone_name = req.body.drone_name;
   var newdrone_description = req.body.drone_description;
   res.redirect('/pilotprofile');
-});*/
+});
 
 
 
