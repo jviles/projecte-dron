@@ -24,7 +24,7 @@ router.get('/', (req, res, next) => {
         next();
       }
       else {
-        res.render('races', {Race:docs});
+        res.render('races', {Race});
       }
     });
   });

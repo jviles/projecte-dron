@@ -25,10 +25,6 @@ header nav {
 header nav h1 {
   font-family: 'Black Ops One', cursive;
   font-size:48px;
-  background-color: -webkit-linear-gradient(180deg, #ffffff 0%, #0082ff 36%, #000000 100%);
-  background-color: -moz-linear-gradient(180deg, #ffffff 0%, #0082ff 36%, #000000 100%);
-  background-color: -o-linear-gradient(180deg, #ffffff 0%, #0082ff 36%, #000000 100%);
-  background-color: linear-gradient(180deg, #ffffff 0%, #0082ff 36%, #000000 100%);
 }
  
 header nav ul {

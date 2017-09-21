@@ -58,7 +58,7 @@ router.post('/signup', (req, res, next) => {
         });
       } else {
         req.session.currentUser = newUser;
-        res.redirect('/pilotprofile');
+        res.redirect('pilotprofile');
       }
     });
 
