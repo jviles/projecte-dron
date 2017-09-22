@@ -18,20 +18,9 @@ router.use((req, res, next) => {
 
 // --- pilot profile
 
-/*router.get('/',(req, res, next) => {
-  console.log("GET profile")
-  res.render('pilotprofile');
-});*/
-
 router.get('/', (req, res, next) => {
-  User.findById(req.param.id, function (err,User) {
-    if(err) {
-      next();
-    }
-    else {
-      res.render('pilotprofile');
-    }
-  });
+  console.log("user in the session:", req.session.currentUser);
+  res.render('pilotprofile', {user: req.session.currentUser});
 });
 
 router.post('/', (req, res, next) => {
