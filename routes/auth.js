@@ -48,7 +48,12 @@ router.post('/signup', (req, res, next) => {
 
     var newUser = new userModel({
       username,
-      password: hashPass
+      password: hashPass,
+      level: 0,
+      points: 0,
+      name: req.body.name,
+      drone_name: req.body.drone_name,
+      drone_description: req.body.drone_description
     });
 
     newUser.save((err) => {
