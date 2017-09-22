@@ -89,7 +89,7 @@ router.post("/login", (req, res, next) => {
     });
     return;
   }
-  userModel.findOne({ "username": username }, "username password", (err, user) => {
+  userModel.findOne({ "username": username }, (err, user) => {
     if (err || !user) {
       res.render("login", {
         errorMessage: "User or password incorrect"
