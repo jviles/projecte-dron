@@ -5,11 +5,7 @@ const router = express.Router();
 // --- homepage
 
 router.get('/',(req, res, next) => {
-  if (req.session.currentUser) {
-    res.redirect("/pilotprofile");
-  } else {
-    res.render('index');
-  }``
+  res.render('index', {user: req.session.currentUser});
 });
 
 module.exports = router;

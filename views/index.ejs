@@ -20,9 +20,15 @@
       <nav>
         <h1><i>SHOOTING STARS</i></h1>
         <ul>
-          
+          <li><a href="/"> Index </a></li>
+          <% if (user) { %>
+          <li><a href="/pilotprofile">Pilot Profile</a> </li>              
+          <li><a href="/race">Race</a> </li>  
+          <% } %>
+          <% if (!user) { %>
           <li><a href="/auth/login"><span class="icon-user"></span> Log In</a> </li>
           <li><a href="/auth/signup"> Sign up </a></li>
+          <% } %>
                         
         </ul>
       </nav>
@@ -34,9 +40,18 @@
 
     <div class="initialbuttons">
 
-    <a href="/auth/login" class="button">JOIN A RACE</a>
+      <% if (user) { %>
+        <a href="/pilotprofile" class="button">JOIN A RACE</a>           
+        <a href="/race"class="button">CREATE A RACE</a>
+      <% } %>
+      <% if (!user) { %>
+        <a href="/auth/login" class="button">JOIN A RACE</a>           
+        <a href="/auth/login"class="button">CREATE A RACE</a>
+      <% } %>
+
+   
   
-    <a href="/auth/login"class="button">CREATE A RACE</a>
+   
       
    </div>
 
